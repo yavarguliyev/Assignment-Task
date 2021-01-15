@@ -1,0 +1,71 @@
+body {
+  background-color: rgb(234, 234, 234) !important;
+}
+
+/* home page styles starts */
+.masthead {
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(
+    135deg,
+    rgb(24, 42, 115) 0%,
+    rgb(33, 138, 174) 69%,
+    rgb(32, 167, 172) 89%
+  ) !important;
+  height: 100vh;
+}
+
+.masthead .ui.menu .ui.button,
+.ui.menu a.ui.inverted.button {
+  margin-left: 0.5em;
+}
+
+.masthead h1.ui.header {
+  font-size: 4em;
+  font-weight: normal;
+}
+
+.masthead h2 {
+  font-size: 1.7em;
+  font-weight: normal;
+}
+/* home page styles ends */
+
+/* side bars starts */
+
+.sidebar-left {
+  height: 100vh !important;
+}
+
+.sidebar-icons-up {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 5px;
+}
+
+.sidebar-icons-down {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 5px;
+}
+
+.ui.grid > .column:not(.row),
+.ui.grid > .row > .column {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.ui.segment {
+  margin: 0 !important;
+}
+
+.footer-text {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* side bars starts */
