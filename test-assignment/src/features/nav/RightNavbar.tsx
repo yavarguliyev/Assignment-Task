@@ -6,7 +6,8 @@ import React, { Fragment } from 'react';
 const useStyles = makeStyles((theme) => ({
   parent: {
     height: '10vh',
-    backgroundColor: '#FFFFFF !important'
+    backgroundColor: '#FFFFFF !important',
+    paddingBottom: '4rem'
   },
 
   grid: {

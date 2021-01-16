@@ -1,16 +1,12 @@
-import { Grid, makeStyles, Paper } from '@material-ui/core';
+import { List, makeStyles, Grid, ListItem } from '@material-ui/core';
 import { observer } from 'mobx-react-lite';
 import React, { Fragment } from 'react';
 
 const useStyles = makeStyles((theme) => ({
   parent: {
-    height: '90vh',
-    backgroundColor: '##FFFFFF !important'
-  },
-
-  paper: {
-    padding: theme.spacing(1),
-    borderColor: '#E5E5E5'
+    maxHeight: '90vh',
+    backgroundColor: '#FFFFFF !important',
+    paddingBottom: '4rem'
   },
 }));
 
@@ -19,17 +15,21 @@ const Dashboard = () => {
 
   return (
     <Fragment>
-      <Grid container spacing={0} className={classes.parent}>
-        <Grid item xs={12} md={12} lg={12}>
-          <Paper className={classes.paper}></Paper>
+      <List disablePadding className={`${classes.parent}`}>
+        <Grid item xs={6} md={6} lg={6}>
+          <ListItem></ListItem>
         </Grid>
-        <Grid item xs={12} md={12} lg={12}>
-          <Paper className={classes.paper}></Paper>
+      </List>
+      <List disablePadding className={`${classes.parent}`}>
+        <Grid item xs={6} md={6} lg={6}>
+
         </Grid>
-        <Grid item xs={12} md={12} lg={12}>
-          <Paper className={classes.paper}></Paper>
+      </List>
+      <List disablePadding className={`${classes.parent}`}>
+        <Grid item xs={6} md={6} lg={6}>
+
         </Grid>
-      </Grid>
+      </List>
     </Fragment>
   )
 }

@@ -8,8 +8,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    height: '100vh',
-    backgroundColor: '#F7F7F7 !important'
+    backgroundColor: '#F7F7F7 !important',
+    height: '100vh'
   },
 
   header_text: {
@@ -62,7 +62,6 @@ const SideDashboardNavBar = () => {
             <Link href='#' className={classes.subhead_text}>МЕНЕДЖЕР ПРОЦЕССА</Link>
           </ListItem>
         </List>
-
         <Paper className={classes.papper}>
           <List>
             <ListItem>
