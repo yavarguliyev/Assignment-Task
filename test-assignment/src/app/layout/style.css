@@ -1,5 +1,7 @@
 body {
   background-color: rgb(234, 234, 234) !important;
+  margin: 0;
+  padding: 0;
 }
 
 /* home page styles starts */
@@ -30,42 +32,3 @@ body {
   font-weight: normal;
 }
 /* home page styles ends */
-
-/* side bars starts */
-
-.sidebar-left {
-  height: 100vh !important;
-}
-
-.sidebar-icons-up {
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 5px;
-}
-
-.sidebar-icons-down {
-  position: absolute;
-  display: block;
-  bottom: 0;
-  left: 5px;
-}
-
-.ui.grid > .column:not(.row),
-.ui.grid > .row > .column {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-.ui.segment {
-  margin: 0 !important;
-}
-
-.footer-text {
-  display: flex !important;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* side bars starts */

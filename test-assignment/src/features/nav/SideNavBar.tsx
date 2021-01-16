@@ -1,32 +1,72 @@
+import { ListItem, List, makeStyles, Link } from '@material-ui/core';
+import { Home, Settings, Search, Chat, GetApp, StoreMallDirectory } from '@material-ui/icons';
 import { observer } from 'mobx-react-lite';
-import React from 'react';
-import { Icon, Menu, Segment, Sidebar } from 'semantic-ui-react'
+import React, { Fragment } from 'react';
 
-const SideNavBar: React.FC = () => {
+const useStyles = makeStyles((theme) => ({
+  icons: {
+    color: theme.palette.common.white,
+    marginBottom: '1rem'
+  },
+
+  icons_size: {
+    fontSize: '30px',
+    color: 'white'
+  },
+
+  parent: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    flexDirection: 'column',
+    alignItems: 'center',
+    height: '100vh',
+    backgroundColor: '#82B284 !important'
+  }
+}));
+
+const SideNavBar = () => {
+  const classes = useStyles()
+
   return (
-    <Sidebar.Pushable as={Segment} className='sidebar-left'>
-      <Sidebar
-        as={Menu}
-        animation='overlay'
-        icon='labeled'
-        inverted
-        vertical
-        visible
-        width='thin' style={{ backgroundColor: '#82B284' }}>
-        <div className='sidebar-icons-parent'>
-          <div className='sidebar-icons-up'>
-            <Menu.Item as='a'><Icon name='home' /></Menu.Item>
-            <Menu.Item as='a'><Icon name='archive' /></Menu.Item>
-            <Menu.Item as='a'><Icon name='search' /></Menu.Item>
-          </div>
-          <div className='sidebar-icons-down'>
-            <Menu.Item as='a'><Icon name='settings' /></Menu.Item>
-            <Menu.Item as='a'><Icon name='chat' /></Menu.Item>
-            <Menu.Item as='a'><Icon name='download' /></Menu.Item>
-          </div>
-        </div>
-      </Sidebar>
-    </Sidebar.Pushable>
+    <Fragment>
+      <List disablePadding className={`${classes.parent}`}>
+        <List>
+          <ListItem>
+            <Link href='#'>
+              <Home className={classes.icons_size} />
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link href='#'>
+              <StoreMallDirectory className={classes.icons_size} />
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link href='#'>
+              <Search className={classes.icons_size} />
+            </Link>
+          </ListItem>
+        </List>
+
+        <List>
+          <ListItem>
+            <Link href='#'>
+              <Settings className={classes.icons_size} />
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link href='#'>
+              <GetApp className={classes.icons_size} />
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link href='#'>
+              <Chat className={classes.icons_size} />
+            </Link>
+          </ListItem>
+        </List>
+      </List>
+    </Fragment>
   )
 }
 
