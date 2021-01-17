@@ -26,13 +26,11 @@ const Footer: React.FC = () => {
 
   return (
     <Fragment>
-      <Grid>
-        <Grid container spacing={0} className={classes.parent}>
-          <Grid item xs={12} md={12} lg={12}>
-            <Typography variant='h6' className={classes.footer_hedar_text}>© 1992 - 2020 Честный Агент © Все права защищены.</Typography>
-          </Grid>
-          <Grid item xs={12} md={12} lg={12} className={classes.footer_hedar_text}>8 (495) 150-21-12</Grid>
+      <Grid container spacing={0} className={classes.parent}>
+        <Grid item xs={12} md={12} lg={12}>
+          <Typography variant='h6' className={classes.footer_hedar_text}>© 1992 - 2020 Честный Агент © Все права защищены.</Typography>
         </Grid>
+        <Grid item xs={12} md={12} lg={12} className={classes.footer_hedar_text}>8 (495) 150-21-12</Grid>
       </Grid>
     </Fragment>
   )

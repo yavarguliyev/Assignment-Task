@@ -5,7 +5,6 @@ import React, { Fragment } from 'react';
 
 const useStyles = makeStyles((theme) => ({
   icons: {
-    // color: theme.palette.common.white,
     marginBottom: '1rem',
   },
 
@@ -20,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     backgroundColor: '#82B284 !important',
-    height: '100vh'
+    height: '100vh',
   }
 }));
 
@@ -29,8 +28,9 @@ const SideNavBar = () => {
 
   return (
     <Fragment>
-      <Grid>
+      <Grid item xs={1} md={1} lg={1}>
         <List disablePadding className={`${classes.parent}`}>
+
           <List>
             <ListItem>
               <Link href='/'>
@@ -66,6 +66,7 @@ const SideNavBar = () => {
               </Link>
             </ListItem>
           </List>
+
         </List>
       </Grid>
     </Fragment>

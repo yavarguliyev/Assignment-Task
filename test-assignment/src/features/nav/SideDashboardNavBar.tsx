@@ -1,4 +1,4 @@
-import { List, makeStyles, ListItem, Link, Typography, Paper, Hidden } from '@material-ui/core';
+import { List, makeStyles, ListItem, Link, Typography, Paper, Hidden, Grid } from '@material-ui/core';
 import { LocationCity } from '@material-ui/icons';
 import { observer } from 'mobx-react-lite';
 import React, { Fragment } from 'react';
@@ -53,26 +53,28 @@ const SideDashboardNavBar = () => {
 
   return (
     <Fragment>
-      <List disablePadding className={`${classes.parent}`}>
-        <List>
-          <ListItem>
-            <Link href='#' className={classes.header_text}>ЧЕСТНЫЙ АГЕНТ</Link>
-          </ListItem>
-          <ListItem>
-            <Link href='#' className={classes.subhead_text}>МЕНЕДЖЕР ПРОЦЕССА</Link>
-          </ListItem>
-        </List>
-        <Paper className={classes.papper}>
+      <Grid item xs={4} md={4} lg={4}>
+        <List disablePadding className={`${classes.parent}`}>
           <List>
             <ListItem>
-              <Link href='#' className={`${classes.sidebar_menu_icon}`}><LocationCity /></Link>
-              <Hidden xsDown mdDown>
-                <Typography className={`${classes.sidebar_menu_text}`} variant='h5'>Организации</Typography>
-              </Hidden>
+              <Link href='#' className={classes.header_text}>ЧЕСТНЫЙ АГЕНТ</Link>
+            </ListItem>
+            <ListItem>
+              <Link href='#' className={classes.subhead_text}>МЕНЕДЖЕР ПРОЦЕССА</Link>
             </ListItem>
           </List>
-        </Paper>
-      </List>
+          <Paper className={classes.papper}>
+            <List>
+              <ListItem>
+                <Link href='#' className={`${classes.sidebar_menu_icon}`}><LocationCity /></Link>
+                <Hidden xsDown mdDown>
+                  <Typography className={`${classes.sidebar_menu_text}`} variant='h5'>Организации</Typography>
+                </Hidden>
+              </ListItem>
+            </List>
+          </Paper>
+        </List>
+      </Grid>
     </Fragment>
   )
 }
