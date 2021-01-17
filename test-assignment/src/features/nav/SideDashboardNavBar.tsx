@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     backgroundColor: '#F7F7F7 !important',
-    height: '100vh'
+    height: '100%'
   },
 
   header_text: {

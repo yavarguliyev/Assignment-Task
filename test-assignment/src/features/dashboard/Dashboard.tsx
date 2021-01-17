@@ -1,7 +1,9 @@
 import { makeStyles, Grid, ListItem, Typography, Link, Hidden, List } from '@material-ui/core';
 import { Edit, Close } from '@material-ui/icons';
 import { observer } from 'mobx-react-lite';
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext } from 'react';
+import { RootStoreContext } from '../../app/stores/rootStore';
+import RemovePhoto from '../modals/RemovePhoto';
 
 const useStyles = makeStyles((theme) => ({
   parent: {
@@ -96,9 +98,16 @@ const useStyles = makeStyles((theme) => ({
     right: '0',
     border: '1px solid #f9f5f5'
   },
+
+  submit_button: {
+    border: '1px dotted #E5E5E5'
+
+  }
 }));
 
 const Dashboard = () => {
+  const rootStore = useContext(RootStoreContext);
+  const { openModal } = rootStore.modalStore;
   const classes = useStyles()
 
   return (
@@ -234,7 +243,7 @@ const Dashboard = () => {
                   <ListItem>
                     <div className={classes.root}>
                       <img className={classes.image} src='../assets/images.jpg' alt='' />
-                      <Link href='#'>
+                      <Link onClick={() => openModal(<RemovePhoto />)} href='#'>
                         <Close className={classes.close_button} />
                       </Link>
                     </div>
@@ -256,7 +265,7 @@ const Dashboard = () => {
                     <div className={classes.root}>
                       <img className={classes.image} src='../assets/images.jpg' alt='' />
                       <Link href='#'>
-                        <Close className={classes.close_button} />
+                        <Close onClick={() => openModal(<RemovePhoto />)} className={classes.close_button} />
                       </Link>
                     </div>
                   </ListItem>
@@ -276,7 +285,7 @@ const Dashboard = () => {
                   <ListItem>
                     <div className={classes.root}>
                       <img className={classes.image} src='../assets/images.jpg' alt='' />
-                      <Link href='#'>
+                      <Link onClick={() => openModal(<RemovePhoto />)} href='#'>
                         <Close className={classes.close_button} />
                       </Link>
                     </div>
@@ -294,7 +303,8 @@ const Dashboard = () => {
           </Grid>
 
           <Grid container spacing={0}>
-            <Grid item xs={7} md={7} lg={7}></Grid>
+            <Grid item xs={3} md={3} lg={3}>
+            </Grid>
           </Grid>
 
         </List>
