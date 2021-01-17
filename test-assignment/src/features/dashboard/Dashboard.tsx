@@ -308,16 +308,19 @@ const Dashboard = () => {
 
           </Grid>
 
-          <Grid item xs={7} md={5} lg={3} style={{ border: '1px dotted #E5E5E5', marginLeft: '16px', marginRight: '16px' }}>
-            <List disablePadding style={{ display: 'flex' }}>
-              <ListItem>
-                <Add style={{ color: '#82B284' }} />
-                {/* <FormLabel htmlFor='file-input'>ДОБАВИТЬ ИЗОБРАЖЕНИЕ</FormLabel> */}
-                <input type='file' style={{ visibility: 'hidden' }} id='file-input' />
-              </ListItem>
-            </List>
-          </Grid>
-
+          <Hidden xsDown mdDown>
+            <ListItem style={{ border: '1px dotted #E5E5E5', margin: '10px 16px' }}>
+              <List className={classes.container}>
+                <ListItem className={classes.grid_right}>
+                  <Add style={{ color: '#82B284' }} />
+                </ListItem>
+                <ListItem>
+                  <FormLabel htmlFor='file-input' style={{ color: 'green', cursor: 'pointer', position: 'absolute', left: '150px' }} className={classes.subhead_text}>ДОБАВИТЬ ИЗОБРАЖЕНИЕ</FormLabel>
+                  <input type='file' id='file-input' style={{ visibility: 'hidden' }} />
+                </ListItem>
+              </List>
+            </ListItem>
+          </Hidden>
         </List>
 
       </Grid>
