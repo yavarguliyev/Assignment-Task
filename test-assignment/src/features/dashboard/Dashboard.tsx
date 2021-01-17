@@ -1,5 +1,5 @@
-import { makeStyles, Grid, ListItem, Typography, Link, Hidden, List } from '@material-ui/core';
-import { Edit, Close } from '@material-ui/icons';
+import { makeStyles, Grid, ListItem, Typography, Link, Hidden, List, FormLabel } from '@material-ui/core';
+import { Edit, Close, Add } from '@material-ui/icons';
 import { observer } from 'mobx-react-lite';
 import React, { Fragment, useContext } from 'react';
 import { RootStoreContext } from '../../app/stores/rootStore';
@@ -102,6 +102,11 @@ const useStyles = makeStyles((theme) => ({
   submit_button: {
     border: '1px dotted #E5E5E5'
 
+  },
+
+  list_parent: {
+    width: '100vw',
+    borderBottom: '1px solid #E5E5E5'
   }
 }));
 
@@ -113,6 +118,7 @@ const Dashboard = () => {
   return (
     <Fragment>
       <Grid item xs={7} md={7} lg={7}>
+
         <List disablePadding>
 
           <ListItem>
@@ -144,7 +150,7 @@ const Dashboard = () => {
         </List>
 
         <Hidden xsDown>
-          <List disablePadding>
+          <List disablePadding className={classes.list_parent}>
 
             <ListItem>
               <List className={classes.rules_list}>
@@ -200,7 +206,7 @@ const Dashboard = () => {
         </List>
 
         <Hidden xsDown>
-          <List disablePadding>
+          <List disablePadding className={classes.list_parent}>
 
             <ListItem>
               <List className={classes.rules_list}>
@@ -302,12 +308,18 @@ const Dashboard = () => {
 
           </Grid>
 
-          <Grid container spacing={0}>
-            <Grid item xs={3} md={3} lg={3}>
-            </Grid>
+          <Grid item xs={7} md={5} lg={3} style={{ border: '1px dotted #E5E5E5', marginLeft: '16px', marginRight: '16px' }}>
+            <List disablePadding style={{ display: 'flex' }}>
+              <ListItem>
+                <Add style={{ color: '#82B284' }} />
+                {/* <FormLabel htmlFor='file-input'>ДОБАВИТЬ ИЗОБРАЖЕНИЕ</FormLabel> */}
+                <input type='file' style={{ visibility: 'hidden' }} id='file-input' />
+              </ListItem>
+            </List>
           </Grid>
 
         </List>
+
       </Grid>
     </Fragment >
   )

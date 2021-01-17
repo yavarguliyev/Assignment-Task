@@ -37,7 +37,7 @@ const RightNavBar: React.FC = () => {
   return (
     <Fragment>
       <Grid item xs={7} md={7} lg={7} style={{ backgroundColor: '#fff' }}>
-        <List disablePadding>
+        <List disablePadding style={{ borderBottom: '1px solid #E5E5E5' }}>
           <List className={classes.grid}>
             <List disablePadding>
               <ListItem className={`${classes.list_text}`}>
