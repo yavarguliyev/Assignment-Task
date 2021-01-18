@@ -1,5 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 import { history } from "../..";
+import { IPhoto } from "../models/photo";
 
 axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
@@ -50,7 +51,13 @@ const requests = {
   }
 }
 
+const Photos = {
+  uploadPhoto: (photo: Blob): Promise<IPhoto> => requests.postForm(``, photo),
+  deletePhoto: (id: string) => requests.del(`/${id}`)
+}
+
 const agent = {
+  Photos
 };
 
 export default agent;

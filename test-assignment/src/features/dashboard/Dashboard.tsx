@@ -316,7 +316,7 @@ const Dashboard = () => {
                 </ListItem>
                 <ListItem>
                   <FormLabel htmlFor='file-input' style={{ color: 'green', cursor: 'pointer', position: 'absolute', left: '150px' }} className={classes.subhead_text}>ДОБАВИТЬ ИЗОБРАЖЕНИЕ</FormLabel>
-                  <input type='file' id='file-input' style={{ visibility: 'hidden' }} />
+                  <input onChange={(ev) => { }} type='file' id='file-input' style={{ visibility: 'hidden' }} />
                 </ListItem>
               </List>
             </ListItem>
