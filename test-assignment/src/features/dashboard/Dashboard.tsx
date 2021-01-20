@@ -113,7 +113,7 @@ const useStyles = makeStyles((theme) => ({
 const Dashboard = () => {
   const rootStore = useContext(RootStoreContext);
   const { openModal } = rootStore.modalStore;
-  const classes = useStyles()
+  const classes = useStyles();
 
   return (
     <Fragment>

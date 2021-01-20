@@ -3,6 +3,8 @@ import { ArrowBack, Delete, Replay, Link as Links } from '@material-ui/icons';
 import { observer } from 'mobx-react-lite';
 import React, { Fragment } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import NotFound from '../../app/layout/NotFound';
+import PrivateRoute from '../../app/layout/PrivateRoute';
 import Dashboard from '../dashboard/Dashboard';
 
 const useStyles = makeStyles((theme) => ({
@@ -65,7 +67,8 @@ const RightNavBar: React.FC = () => {
         </List>
 
         <Switch>
-          <Route component={Dashboard} />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <Route component={NotFound} />
         </Switch>
       </Grid>
     </Fragment >

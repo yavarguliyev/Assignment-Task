@@ -54,10 +54,15 @@ const requests = {
 const Photos = {
   uploadPhoto: (photo: Blob): Promise<IPhoto> => requests.postForm(``, photo),
   deletePhoto: (id: string) => requests.del(`/${id}`)
-}
+};
+
+const Token = {
+  get: () => axios.get('/auth', {params: {user: 'USERNAME'}})
+};
 
 const agent = {
-  Photos
+  Photos,
+  Token
 };
 
 export default agent;

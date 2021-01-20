@@ -13,11 +13,15 @@ import HomePage from "../../features/home/HomePage";
 
 const App = () => {
   const rootStore = useContext(RootStoreContext);
-  const { setAppLoaded, appLoaded } = rootStore.commonStrore;
+  const { setAppLoaded, appLoaded, token } = rootStore.commonStrore;
 
   useEffect(() => {
-    setAppLoaded();
-  }, [setAppLoaded])
+    if (token) {
+      setAppLoaded();
+    } else {
+      setAppLoaded();
+    }
+  }, [setAppLoaded, token])
 
   if (!appLoaded) return <LoadingComponent content='Loading app...' />;
 
